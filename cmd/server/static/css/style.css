@@ -1102,3 +1102,48 @@ img, svg {
     align-self: start;
   }
 }
+
+/* ==========================================================================
+   Languages (Education section)
+   ========================================================================== */
+
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lang-item {
+  padding: 14px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.lang-item:hover {
+  border-color: var(--accent-primary);
+  background: var(--bg-card);
+}
+
+.lang-name {
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.lang-level {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+.lang-note {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
