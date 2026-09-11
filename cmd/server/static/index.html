@@ -66,6 +66,8 @@
     .hero-section{padding-top:48px;padding-bottom:72px}
     .hero-grid{display:grid;grid-template-columns:1fr 260px;gap:48px;align-items:center}
     .hero-status-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--bg-surface);border:1px solid var(--rule);border-radius:var(--radius-full);font-size:.8rem;color:var(--ink-soft);margin-bottom:24px;font-family:var(--font-mono)}
+    .hero-pills{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:24px}
+    .hero-pills .hero-status-pill{margin-bottom:0}
     .hero-status-pill--available{border-color:rgba(16,185,129,.5);background:rgba(16,185,129,.09);color:var(--ink);font-weight:500}
     .hero-status-pill--available .brand-dot{animation:pulse-dot 2.4s ease-in-out infinite}
     @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.55)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
@@ -225,20 +227,21 @@
     <!-- Hero Section -->
     <section class="section-y hero-section">
       <div class="container">
+        <!-- Status row: availability left, location right, one line on desktop -->
+        <div class="hero-pills">
+          <p class="hero-status-pill hero-status-pill--available font-mono">
+            <span class="brand-dot" aria-hidden="true"></span>
+            <span>Open to new roles &middot; available from October 2026</span>
+          </p>
+          <p class="hero-status-pill font-mono">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Haifa area, Israel (UTC+2/3) &middot; full EU overlap</span>
+          </p>
+        </div>
+
         <div class="hero-grid">
           <!-- Left Column: Bio & Actions -->
           <div class="hero-content-wrapper">
-            <div class="hero-pills">
-              <p class="hero-status-pill hero-status-pill--available font-mono">
-                <span class="brand-dot" aria-hidden="true"></span>
-                <span>Open to new roles &middot; available from October 2026</span>
-              </p>
-              <p class="hero-status-pill font-mono">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Haifa area, Israel (UTC+2/3) &middot; full EU overlap</span>
-              </p>
-            </div>
-
             <h1 class="hero-title">
               Beniamin Levin
               <span class="hero-title-line">Lead Software Engineer &mdash; <span class="hero-title-accent">still hands-on after 19+ years</span>.</span>

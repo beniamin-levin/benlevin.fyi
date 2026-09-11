@@ -842,6 +842,8 @@ img, svg {
 .hero-pills {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between; /* availability left, location right */
+  align-items: center;
   gap: 10px;
   margin-bottom: 24px;
 }
