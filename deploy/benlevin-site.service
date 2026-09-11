@@ -1,0 +1,23 @@
+[Unit]
+Description=benlevin.fyi personal website
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/benlevin.fyi
+Environment="PORT=8081"
+Environment="HTTP_ADDR=127.0.0.1:8081"
+ExecStart=/opt/benlevin.fyi/bin/server
+Restart=on-failure
+RestartSec=5
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

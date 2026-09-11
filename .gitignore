@@ -1,0 +1,32 @@
+# Build artifacts
+bin/
+/server
+*.exe
+*.test
+*.out
+
+# Working notes (site reviews, punchlists) — local only
+notes/
+
+# Local secrets & environment
+.env
+.env.local
+.env.*.local
+
+# SSH / TLS keys (never commit private keys)
+*.pem
+*.key
+server-keys/
+
+# OS & editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Local deployment target (host, user, key path)
+deploy/deploy.env
