@@ -41,7 +41,7 @@ very different lifetimes:
 
 | Path | Policy | Reason |
 |---|---|---|
-| `/css/`, `/js/`, `/assets/` | `max-age=31536000, immutable` | Content-addressed in practice; a change ships a new binary |
+| `/css/`, `/js/`, `/assets/` | `max-age=31536000, immutable` | Safe because `deploy/stamp-assets.sh` (run by `deploy.sh`) rewrites the `?v=` content hash on the CSS/JS links whenever they change; a changed portrait needs a new filename |
 | `/robots.txt`, `/sitemap.xml` | `max-age=86400` | Crawler-facing, changes rarely |
 | everything else | `max-age=300, stale-while-revalidate=3600` | HTML should update quickly, but never block on revalidation |
 

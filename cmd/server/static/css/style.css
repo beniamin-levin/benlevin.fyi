@@ -34,7 +34,7 @@
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   
   --nav-height: 72px;
-  --container-max: 1100px;
+  --container-max: 1280px;
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -310,7 +310,7 @@ img, svg {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  grid-template-columns: 1fr 300px;
   gap: 48px;
   align-items: center;
 }
@@ -367,7 +367,7 @@ img, svg {
 .hero-portrait-card {
   position: relative;
   width: 100%;
-  max-width: 260px;
+  max-width: 300px;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -536,7 +536,7 @@ img, svg {
 /* Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
@@ -581,7 +581,7 @@ img, svg {
 /* Trainings Grid */
 .training-list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 12px;
 }
 
@@ -620,7 +620,7 @@ img, svg {
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
   text-align: center;
-  max-width: 760px;
+  max-width: 880px;
   margin: 0 auto;
 }
 
@@ -744,11 +744,11 @@ img, svg {
   }
 
   .hero-portrait-wrapper {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .hero-portrait-card {
-    max-width: 220px;
+    max-width: 300px;
   }
   
   .hero-title {
@@ -781,6 +781,16 @@ img, svg {
   
   .mobile-menu-btn {
     display: block;
+  }
+
+  /* Full-width feel on phones: tighter gutters, cards use the width */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .exp-card {
+    padding: 24px 20px;
   }
   
   .hero-title {
@@ -908,7 +918,7 @@ img, svg {
 
 .impact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   list-style: none;
   padding: 0;
@@ -1165,4 +1175,29 @@ img, svg {
   font-size: 0.8rem;
   line-height: 1.5;
   color: var(--ink-muted);
+}
+
+/* ==========================================================================
+   Phones: everything actionable spans the full width
+   ========================================================================== */
+
+@media (max-width: 520px) {
+  .hero-pills .hero-status-pill { flex: 1 1 100%; }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn,
+  .connect-actions .btn,
+  .email-copy-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .connect-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

@@ -22,6 +22,9 @@ if [[ ! -f "$KEY_FILE" ]]; then
   exit 1
 fi
 
+echo "==> 0. Stamping CSS/JS cache-busters..."
+"${SCRIPT_DIR}/stamp-assets.sh"
+
 echo "==> 1. Building Linux binary..."
 cd "$ROOT_DIR"
 mkdir -p bin
