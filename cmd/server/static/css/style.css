@@ -236,6 +236,11 @@ img, svg {
   font-size: 0.9rem;
 }
 
+/* Below this the subtitle squeezes the brand onto several lines */
+@media (max-width: 1100px) {
+  .brand-subtitle { display: none; }
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -294,6 +299,26 @@ img, svg {
 .theme-toggle-btn:hover {
   border-color: var(--ink-soft);
   color: var(--ink);
+}
+
+/* CV download: the one call to action that stays in the header */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--rule-light);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  transition: var(--transition);
+}
+
+.nav-cta:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 .mobile-menu-btn {
@@ -496,6 +521,39 @@ img, svg {
   border-radius: var(--radius-sm);
 }
 
+/* Promotions within one employer, most recent first */
+.exp-progression {
+  list-style: none;
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.exp-progression li {
+  padding-left: 12px;
+  border-left: 2px solid var(--rule);
+}
+
+.exp-progression li:first-child {
+  border-left-color: var(--accent-primary);
+}
+
+.exp-progression .exp-role-badge {
+  margin-top: 0;
+}
+
+.exp-role-badge--earlier {
+  color: var(--ink-soft);
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+
+.exp-role-dates {
+  margin-top: 4px;
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+}
+
 .exp-details-header {
   display: flex;
   flex-direction: column;
@@ -575,41 +633,6 @@ img, svg {
 .skill-pill:hover {
   border-color: var(--accent-primary);
   color: var(--ink);
-}
-
-/* Trainings Grid */
-.training-list-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 12px;
-}
-
-.training-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 18px;
-  background: var(--bg-surface);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-sm);
-  font-size: 0.875rem;
-  color: var(--ink-soft);
-  transition: var(--transition);
-}
-
-.training-item:hover {
-  border-color: var(--accent-primary);
-  color: var(--ink);
-  background: var(--bg-card);
-  transform: translateX(3px);
-}
-
-.training-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-primary);
-  flex-shrink: 0;
 }
 
 /* Connect / Contact Section */
@@ -728,6 +751,7 @@ img, svg {
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -760,7 +784,8 @@ img, svg {
   }
 }
 
-@media (max-width: 768px) {
+/* The header switches to the menu button before the links run out of room */
+@media (max-width: 900px) {
   .nav-links {
     display: none;
     position: absolute;
@@ -773,15 +798,17 @@ img, svg {
     padding: 24px;
     gap: 18px;
   }
-  
+
   .nav-links.open {
     display: flex;
   }
-  
+
   .mobile-menu-btn {
     display: block;
   }
+}
 
+@media (max-width: 768px) {
   /* Full-width feel on phones: tighter gutters, cards use the width */
   .container {
     padding-left: 16px;
@@ -840,7 +867,6 @@ img, svg {
   }
   .exp-card:hover,
   .impact-card:hover,
-  .training-item:hover,
   .btn:hover { transform: none !important; }
 }
 
@@ -987,6 +1013,7 @@ img, svg {
 }
 
 .exp-live { margin-top: 14px; }
+.exp-live + .exp-live { margin-top: 6px; }
 
 .live-link {
   display: inline-flex;
@@ -1076,7 +1103,7 @@ img, svg {
 .case-results strong { color: var(--ink); font-weight: 600; }
 
 /* ==========================================================================
-   Professional development block (inside Education)
+   Sub-blocks inside Education (Languages)
    ========================================================================== */
 
 .dev-block {
