@@ -521,36 +521,10 @@ img, svg {
   border-radius: var(--radius-sm);
 }
 
-/* Promotions within one employer, most recent first */
-.exp-progression {
-  list-style: none;
-  margin-top: 10px;
-  display: grid;
-  gap: 10px;
-}
-
-.exp-progression li {
-  padding-left: 12px;
-  border-left: 2px solid var(--rule);
-}
-
-.exp-progression li:first-child {
-  border-left-color: var(--accent-primary);
-}
-
-.exp-progression .exp-role-badge {
-  margin-top: 0;
-}
-
-.exp-role-badge--earlier {
-  color: var(--ink-soft);
-  background: var(--bg);
-  box-shadow: inset 0 0 0 1px var(--rule);
-}
-
-.exp-role-dates {
-  margin-top: 4px;
-  font-size: 0.72rem;
+/* City under the role badge */
+.exp-place {
+  margin-top: 8px;
+  font-size: 0.8rem;
   color: var(--ink-muted);
 }
 
@@ -633,6 +607,14 @@ img, svg {
 .skill-pill:hover {
   border-color: var(--accent-primary);
   color: var(--ink);
+}
+
+/* The skills the CV puts in bold: the ones used every day */
+.skill-pill--key {
+  color: var(--ink);
+  font-weight: 600;
+  border-color: rgba(var(--accent-primary-rgb), 0.45);
+  background: var(--mark-bg);
 }
 
 /* Connect / Contact Section */
