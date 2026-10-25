@@ -1222,3 +1222,26 @@ img, svg {
 
 /* The hero bio is two short paragraphs, read as one block */
 .hero-bio + .hero-bio { margin-top: -18px; }
+
+/* Additional engineering work: compact, below the featured projects */
+.extra-list {
+  list-style: none;
+  display: grid;
+  gap: 18px;
+}
+
+.extra-head {
+  color: var(--ink);
+}
+
+.extra-head .font-mono-label {
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.extra-text {
+  margin-top: 4px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  max-width: 900px;
+}

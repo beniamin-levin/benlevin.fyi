@@ -96,9 +96,9 @@
   </noscript>
 
   <!-- Full Stylesheet — non-blocking async load -->
-  <link rel="preload" as="style" href="/css/style.css?v=a54697e1"
+  <link rel="preload" as="style" href="/css/style.css?v=8d72f41d"
         onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="/css/style.css?v=a54697e1" /></noscript>
+  <noscript><link rel="stylesheet" href="/css/style.css?v=8d72f41d" /></noscript>
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
@@ -297,9 +297,9 @@
                 <dd class="stat-note">Europe and India, while coding</dd>
               </div>
               <div class="stat-item">
-                <dt class="font-mono-label">Hired / promoted</dt>
+                <dt class="font-mono-label">Engineers hired / later promoted</dt>
                 <dd>9 / 5</dd>
-                <dd class="stat-note">9 engineers hired; 5 later promoted</dd>
+                <dd class="stat-note">4 to Technical Lead, 1 to Senior</dd>
               </div>
               <div class="stat-item">
                 <dt class="font-mono-label">Incoming defects</dt>
@@ -526,12 +526,12 @@
                 <span class="font-mono exp-stack">Python 3.12 · asyncio · FastAPI · Pydantic · Docker · MCP server · NVIDIA Nemotron</span>
               </div>
 
-              <p class="case-lede">A bug report shouldn&rsquo;t be marked fixed because an LLM thinks the patch looks right. FixedYet writes a reproduction test, runs it in a sandbox at the reported version and on current main, and lets deterministic rules, not the model, decide the verdict. It can then prove a fix or a backport and open a draft pull request. I built it solo, to answer the two questions a maintainer actually has: is the bug real at the reporter&rsquo;s version, and is it already fixed?</p>
+              <p class="case-lede">A bug report shouldn&rsquo;t be marked fixed because an LLM thinks the patch looks right. FixedYet writes a reproduction test, runs it in a sandbox at the reported version and on current main, and lets deterministic rules, not the model, decide the verdict. It can then test a proposed fix or backport in the sandbox and open a draft pull request. I built it solo, to answer the two questions a maintainer actually has: is the bug real at the reporter&rsquo;s version, and is it already fixed?</p>
 
               <div class="case-block">
                 <h5 class="case-heading">How it works</h5>
                 <p class="case-flow font-mono">GitHub issue &rarr; Nemotron writes a pytest reproduction &rarr; sandbox runs it at the reported version and on main &rarr; deterministic verdict &rarr; fix or backport, proven in the sandbox &rarr; draft PR</p>
-                <p class="case-text">NVIDIA Nemotron on Nebius Token Factory writes the pytest reproductions, Docker isolates each run, and deterministic rules, not the model, decide the verdict: fixed, open, or not reproduced. For a bug that is still open it writes a fix; for one already fixed on main it verifies the backport to the reporter&rsquo;s release line. A change counts only when the sandbox proves it.</p>
+                <p class="case-text">NVIDIA Nemotron on Nebius Token Factory writes the pytest reproductions, Docker isolates each run, and deterministic rules, not the model, decide the verdict: fixed, open, or not reproduced. For a bug that is still open it writes a fix; for one already fixed on main it verifies the backport to the reporter&rsquo;s release line. A change counts only when the reproduction fails before it, passes after it, and the project&rsquo;s own suite shows no new failure.</p>
               </div>
 
               <div class="case-block">
@@ -586,46 +586,20 @@
             </div>
           </article>
 
-          <!-- Freelance 1: Sure Communications -->
-          <article class="exp-card">
-            <div class="exp-meta">
-              <h3>Sure Communications</h3>
-              <p class="font-mono-label">2019 – Present</p>
-              <p class="exp-role-badge font-mono">Part-Time Freelance Software Engineer</p>
-            </div>
-            <div class="exp-details">
-              <div class="exp-details-header">
-                <h4 class="exp-title">Telecom &amp; Web Integration Solutions for Business Clients</h4>
-                <span class="font-mono exp-stack">PHP · MySQL · AI / Grok API · OpenAI · Chart.js · Shopify</span>
-              </div>
-              <p class="exp-note">Part-time, evenings and weekends, outside full-time employment and in a non-competing domain.</p>
-              <ul class="exp-bullets">
-                <li>Delivered end-to-end PHP/MySQL/JavaScript web applications, customer portals, CRM integrations, and back-office tooling for telecom and business clients, including Shopify e-commerce integrations, Memento platform delivery, and the flagship dealer/consumer sales platform for <strong>Morgan Motor Company</strong> (<code>morgan-sales.com</code>).</li>
-                <li>Led technical architecture, backend automation, and performance tuning across enterprise platforms (<code>crm.sur.co.uk</code>, <code>sur.co.uk</code>, <code>altis.co.uk</code>, <code>melodycare.co.uk</code>); built file-rendering services, cron task runners, email-to-comment synchronisation, and database tuning.</li>
-                <li>Engineered an <mark class="marker-highlight">OpenAI ChatGPT-powered email-reply generator</mark> (context-aware drafting with greeting personalisation, thread trimming, and chase-email detection) and an AI ticket comment generator drafting support responses from full conversation history.</li>
-                <li>Architected and built <mark class="marker-highlight">"SurAI"</mark>: an embedded natural-language business-intelligence copilot in the CRM that converts plain-English questions into schema-aware SQL via the <strong>Grok (xAI) API</strong>. Injects metadata to prevent hallucinated fields, enforces read-only connections &amp; SELECT-only guardrails, and renders results into interactive tables and <strong>Chart.js visualisations</strong> (bar/pie/line).</li>
-              </ul>
-            </div>
-          </article>
+        </div>
 
-          <!-- Project 3: Business FM CRM -->
-          <article class="exp-card">
-            <div class="exp-meta">
-              <h3>Business FM — Custom CRM</h3>
-              <p class="font-mono-label">2012 – 2015</p>
-              <p class="exp-role-badge font-mono">Full-Stack Architect &amp; Developer</p>
-            </div>
-            <div class="exp-details">
-              <div class="exp-details-header">
-                <h4 class="exp-title">Custom Media &amp; Radio Sales CRM</h4>
-                <span class="font-mono exp-stack">PHP · MySQL · AWS (EC2/RDS) · Microsoft Azure</span>
-              </div>
-              <ul class="exp-bullets">
-                <li>Designed, built, deployed, and maintained a bespoke PHP/MySQL CRM for client, contact, and media sales-workflow management as the sole developer.</li>
-                <li>Initially deployed on Microsoft Azure before migrating production infrastructure to AWS EC2/RDS for improved cost optimization and operational control.</li>
-              </ul>
-            </div>
-          </article>
+        <div class="dev-block">
+          <h3 class="dev-heading">Additional engineering work</h3>
+          <ul class="extra-list">
+            <li>
+              <p class="extra-head"><strong>Sure Communications</strong> &mdash; Part-Time Freelance Software Engineer <span class="font-mono-label">2019 – Present</span></p>
+              <p class="extra-text">Part-time, evenings and weekends, outside full-time employment and in a non-competing domain. PHP/MySQL/JavaScript applications, customer portals, and CRM integrations for UK business clients, including Morgan Motor Company&rsquo;s dealer sales platform; also built an OpenAI email-reply generator and SurAI, a natural-language-to-SQL BI copilot with read-only guardrails and Chart.js output.</p>
+            </li>
+            <li>
+              <p class="extra-head"><strong>Business FM</strong> &mdash; Full-Stack Architect &amp; Developer <span class="font-mono-label">2012 – 2015</span></p>
+              <p class="extra-text">Sole developer of a bespoke PHP/MySQL CRM; migrated it from Azure to AWS EC2/RDS.</p>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
