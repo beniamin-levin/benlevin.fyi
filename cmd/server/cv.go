@@ -124,7 +124,7 @@ func (c *cvCache) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Set("Content-Type", "application/pdf")
-	w.Header().Set("Content-Disposition", `inline; filename="`+cvDownloadName+`"`)
+	w.Header().Set("Content-Disposition", `attachment; filename="`+cvDownloadName+`"`)
 	w.Header().Set("Cache-Control", "public, max-age=300")
 	w.Header().Set("X-CV-Source", source)
 	w.Header().Set("X-Content-Type-Options", "nosniff")
