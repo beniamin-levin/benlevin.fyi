@@ -42,7 +42,7 @@ func main() {
 		w.Write([]byte(`{"status":"ok","app":"benlevin.fyi","time":"` + time.Now().UTC().Format(time.RFC3339) + `"}`))
 	})
 
-	// CV PDF: live from GitHub, with the copy on disk as fallback
+	// CV PDF: live from GitLab, with the copy on disk as fallback
 	mux.Handle("/cv.pdf", newCVCache())
 
 	// Static file handler with security headers & caching

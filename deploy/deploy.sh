@@ -41,7 +41,7 @@ scp -i "$KEY_FILE" "${ROOT_DIR}/bin/server-linux" "${SERVER_USER}@${SERVER_HOST}
 scp -i "$KEY_FILE" "${SCRIPT_DIR}/benlevin-site.service" "${SERVER_USER}@${SERVER_HOST}:/tmp/benlevin-site.service"
 scp -i "$KEY_FILE" "${SCRIPT_DIR}/benlevin.fyi.conf" "${SERVER_USER}@${SERVER_HOST}:/tmp/benlevin.fyi.conf"
 
-# Fallback copy of the public CV, served from /cv.pdf when GitHub is down.
+# Fallback copy of the public CV, served from /cv.pdf when GitLab is down.
 # Only the public PDF (no phone number) may ever be uploaded.
 CV_PDF="${BENLEVIN_CV_PDF:-${ROOT_DIR}/../../ben/beniamin-levin-cv-public/Beniamin-Levin-CV-public.pdf}"
 if [[ "$(basename "$CV_PDF")" != "Beniamin-Levin-CV-public.pdf" ]]; then
