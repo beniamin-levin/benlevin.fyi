@@ -572,7 +572,13 @@
               <div class="case-block">
                 <h5 class="case-heading">Architecture</h5>
                 <p class="case-flow font-mono">Windguru + Israeli stations &rarr; Go collectors every minute (systemd timers) &rarr; MySQL &rarr; Go web app &rarr; charts, beach cameras, Telegram and browser alerts</p>
-                <p class="case-text">Live station readings, historical charts, beach cameras, and wind and storm alerts, on Oracle Cloud. Go collectors ingest Windguru and Israeli station data into MySQL every minute and send wind and storm alerts through Telegram and browser notifications. They run on independent systemd timers, so one flaky upstream cannot stall the others; development runs on a Docker-based setup.</p>
+                <p class="case-text">Live station readings, historical charts, beach cameras, and wind, rain, and storm alerts, on Oracle Cloud. Go collectors ingest Windguru and Israeli station data into MySQL every minute and send wind and storm alerts through Telegram and browser notifications. They run on independent systemd timers, so one flaky upstream cannot stall the others; development runs on a Docker-based setup.</p>
+              </div>
+
+              <div class="case-block">
+                <h5 class="case-heading">Live rain and storm alerts</h5>
+                <p class="case-flow font-mono">RainViewer radar (every 10 min) + EUMETSAT MTG satellite lightning &rarr; rain-cell motion between consecutive frames &rarr; projected forward &rarr; Telegram alert (@KYstormbot) when two frames agree rain arrives within 60 min</p>
+                <p class="case-text">I added live rain and storm alerts from radar and satellite data: ikite tracks rain-cell motion across consecutive radar images, projects it forward, and alerts through Telegram before rain reaches the beach. Replayed over a month against a rain gauge ~2 km away, it warned of 7 of 10 rain spells a median of ~40 minutes ahead, and it self-tunes after each storm.</p>
               </div>
 
               <div class="case-block">
