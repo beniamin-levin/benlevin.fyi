@@ -12,12 +12,12 @@ import (
 	"time"
 )
 
-// The CV is served from /cv.pdf. The public PDF on GitLab is the source of
-// truth; a copy on the server's disk is the fallback for when GitLab is
+// The CV is served from /cv.pdf. The public PDF on GitHub is the source of
+// truth; a copy on the server's disk is the fallback for when GitHub is
 // unreachable or the file is gone (e.g. the account is suspended). Every
 // successful fetch refreshes that copy, and deploy.sh uploads it too.
 const (
-	cvSourceURL     = "https://gitlab.com/beniamin-levin/beniamin-levin-cv-public/-/raw/main/Beniamin-Levin-CV-public.pdf"
+	cvSourceURL     = "https://raw.githubusercontent.com/beniamin-levin/beniamin-levin-cv-public/main/Beniamin-Levin-CV-public.pdf"
 	cvDownloadName  = "Beniamin-Levin-CV.pdf"
 	cvFreshFor      = 15 * time.Minute
 	cvRetryAfter    = 5 * time.Minute
@@ -51,7 +51,7 @@ func (c *cvCache) get(ctx context.Context) ([]byte, time.Time, string) {
 
 	now := time.Now()
 	if c.data != nil && now.Sub(c.fetchedAt) < cvFreshFor {
-		return c.data, c.modTime, "gitlab-cached"
+		return c.data, c.modTime, "github-cached"
 	}
 	if now.Sub(c.lastAttempt) >= cvRetryAfter {
 		c.lastAttempt = now
@@ -62,12 +62,12 @@ func (c *cvCache) get(ctx context.Context) ([]byte, time.Time, string) {
 			}
 			c.data, c.fetchedAt = data, now
 			c.saveToDisk(data)
-			return c.data, c.modTime, "gitlab"
+			return c.data, c.modTime, "github"
 		}
-		log.Printf("cv: GitLab fetch failed, using fallback: %v", err)
+		log.Printf("cv: GitHub fetch failed, using fallback: %v", err)
 	}
 	if c.data != nil {
-		return c.data, c.modTime, "gitlab-stale"
+		return c.data, c.modTime, "github-stale"
 	}
 	if data, err := os.ReadFile(c.diskPath); err == nil && isPDF(data) {
 		st, _ := os.Stat(c.diskPath)

@@ -142,7 +142,7 @@
           "knowsLanguage": ["en", "he", "ru"],
           "sameAs": [
             "https://www.linkedin.com/in/beniaminlevin/",
-            "https://gitlab.com/beniamin-levin"
+            "https://github.com/beniamin-levin"
           ],
           "knowsAbout": [
             "Engineering Leadership",
@@ -506,7 +506,7 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Projects &amp; Freelance</h2>
-          <p class="section-desc">Systems I build and run on my own &mdash; designed, written, deployed, and operated by me. Both featured projects are live, with public source on GitLab, if you would rather read current code than take my word for it.</p>
+          <p class="section-desc">Systems I build and run on my own &mdash; designed, written, deployed, and operated by me. Every featured project has public source code, if you would rather read current code than take my word for it.</p>
         </div>
 
         <div class="exp-timeline">
@@ -559,7 +559,7 @@
               <p class="font-mono-label">Feb 2023 – Present</p>
               <p class="exp-role-badge font-mono">Case study · sole engineer &amp; operator</p>
               <p class="exp-live"><a href="https://ikite.fyi" target="_blank" rel="noopener noreferrer" class="live-link"><span class="brand-dot" aria-hidden="true"></span>Live at ikite.fyi</a></p>
-              <p class="exp-live"><a href="https://gitlab.com/beniamin-levin/ikite" target="_blank" rel="noopener noreferrer" class="live-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m22 13.29-3.33-10a.42.42 0 0 0-.14-.18.38.38 0 0 0-.22-.11.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18l-2.26 6.67H8.32L6.1 3.26a.42.42 0 0 0-.1-.18.38.38 0 0 0-.26-.08.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18L2 13.29a.74.74 0 0 0 .27.83L12 21l9.69-6.88a.71.71 0 0 0 .31-.83Z"/></svg>Go source on GitLab</a></p>
+              <p class="exp-live"><a href="https://github.com/beniamin-levin/ikite" target="_blank" rel="noopener noreferrer" class="live-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-8-2"/></svg>Go source on GitHub</a></p>
             </div>
             <div class="exp-details">
               <div class="exp-details-header">
@@ -589,6 +589,44 @@
               <div class="case-block">
                 <h5 class="case-heading">What running it taught me</h5>
                 <p class="case-text">Upstream feeds fail in undignified ways &mdash; a station returns yesterday&rsquo;s reading with today&rsquo;s timestamp, a PDF layout shifts, a file arrives truncated. Most of the engineering is not the happy path; it is staleness detection, per-source backoff, and alerting that distinguishes &ldquo;no wind&rdquo; from &ldquo;no data&rdquo;.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project: Checkout Sentinel — case study -->
+          <article class="exp-card exp-card-feature" id="checkout-sentinel">
+            <div class="exp-meta">
+              <h3>Checkout Sentinel</h3>
+              <p class="font-mono-label">Oct 2026 – Present</p>
+              <p class="exp-role-badge font-mono">Solo build · PayPal AI Hackathon 2026 entry</p>
+              <p class="exp-live"><a href="https://gitlab.com/beniamin-levin/checkout-sentinel" target="_blank" rel="noopener noreferrer" class="live-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m22 13.29-3.33-10a.42.42 0 0 0-.14-.18.38.38 0 0 0-.22-.11.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18l-2.26 6.67H8.32L6.1 3.26a.42.42 0 0 0-.1-.18.38.38 0 0 0-.26-.08.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18L2 13.29a.74.74 0 0 0 .27.83L12 21l9.69-6.88a.71.71 0 0 0 .31-.83Z"/></svg>Python source on GitLab</a></p>
+            </div>
+            <div class="exp-details">
+              <div class="exp-details-header">
+                <h4 class="exp-title">Payment-page skimming detection with verified security-policy remediation</h4>
+                <span class="font-mono exp-stack">Python 3.12 · FastAPI · Playwright + CDP · PostgreSQL · Docker Compose · NVIDIA Nemotron · AWS EC2 &amp; RDS</span>
+              </div>
+
+              <p class="case-lede">One compromised third-party script on a checkout page can skim every field a buyer types, or draw a fake PayPal login over the real checkout. I built Checkout Sentinel to detect that kind of payment-page tampering on PayPal merchants&rsquo; checkouts and to verify the security policies that stop it. It produces PCI DSS v4.0.1-aligned evidence for requirements 6.4.3 and 11.6.1; it is not a compliance certification. The AI investigates, deterministic checks verify, and a human approves.</p>
+
+              <div class="case-block">
+                <h5 class="case-heading">How it works</h5>
+                <p class="case-flow font-mono">Headless-browser crawl of the payment page &rarr; script inventory &rarr; deterministic detectors &rarr; AI investigation with read-only tools &rarr; proposed CSP + SRI &rarr; attack again with the policy enforced &rarr; human approval</p>
+                <p class="case-text">Playwright with raw CDP inventories the payment page&rsquo;s scripts, records listener and network activity, and drives a PayPal sandbox checkout up to the approval step. Deterministic detectors flag injected or tampered scripts, unauthorised listeners on payment fields, data sent to unknown destinations and fake overlays. The AI explains each finding and proposes a Content-Security-Policy and Subresource Integrity pins, as data, never code. A proposal passes only when the page, attacked again with the policy enforced, leaks no canary to the attacker, keeps its essential scripts working, leaves the clean control page unchanged and still reaches PayPal approval. No policy is deployed to the shop without human approval, and a post-deploy check rolls it back if the shop does not serve the approved policy.</p>
+              </div>
+
+              <div class="case-block">
+                <h5 class="case-heading">Results</h5>
+                <ul class="case-results">
+                  <li>Detection: every rule at <strong>precision 1.0, recall 1.0 and false-positive rate 0.0</strong> on the four demo scenarios, with zero findings on the clean control</li>
+                  <li>AI investigation: <strong>9/9 VERIFIED and correctly classified</strong> (3 scenarios &times; 3 runs), total cost <strong>$0.1255</strong></li>
+                  <li>Hosted on AWS (EC2, RDS) since 30 Oct 2026; CI runs Semgrep, pip-audit, gitleaks and an OWASP ZAP baseline scan</li>
+                </ul>
+              </div>
+
+              <div class="case-block">
+                <h5 class="case-heading">Limits, stated plainly</h5>
+                <p class="case-text">Missing or unobserved evidence fails verification. Detection results come from recorded crawls of a synthetic demo shop; the AI-eval numbers come from live-recorded runs replayed offline (no new live LLM calls). Checkout is verified up to PayPal sandbox approval; a completed capture is not claimed. Each crawl is one browser visit, a sample rather than every shopper&rsquo;s experience, and in-page listener hooks can be evaded by determined attacker code.</p>
               </div>
             </div>
           </article>
@@ -891,9 +929,9 @@
               LinkedIn
             </a>
 
-            <a href="https://gitlab.com/beniamin-levin" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m22 13.29-3.33-10a.42.42 0 0 0-.14-.18.38.38 0 0 0-.22-.11.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18l-2.26 6.67H8.32L6.1 3.26a.42.42 0 0 0-.1-.18.38.38 0 0 0-.26-.08.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18L2 13.29a.74.74 0 0 0 .27.83L12 21l9.69-6.88a.71.71 0 0 0 .31-.83Z"/></svg>
-              GitLab
+            <a href="https://github.com/beniamin-levin" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-8-2"/></svg>
+              GitHub
             </a>
           </div>
         </div>
@@ -920,7 +958,7 @@
         <a href="https://ikite.fyi" target="_blank" rel="noopener noreferrer">ikite.fyi</a>
         <a href="/cv.pdf" download="Beniamin-Levin-CV.pdf" type="application/pdf">CV (PDF)</a>
         <a href="https://www.linkedin.com/in/beniaminlevin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://gitlab.com/beniamin-levin" target="_blank" rel="noopener noreferrer">GitLab</a>
+        <a href="https://github.com/beniamin-levin" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
     </div>
   </footer>
